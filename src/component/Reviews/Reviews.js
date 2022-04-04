@@ -13,7 +13,7 @@ const Reviews = () => {
                    reviews.map(review => <div className='rounded-md shadow-lg w-[350px] mx-auto px-5 py-8 my-8  ' key={review.id}>
                    <img className='w-20 h-20 rounded-full mx-auto' src={review.picture} alt="" />
                    <p></p>
-                   <h1> {review.name}</h1>
+                   <h1 className='text-xl font-semibold'> {review.name}</h1>
                   <div className='flex justify-start items-center my-2'>
                   <p className='flex justify-center items-center'>Rating:  {review.ratings} <span className="flex justify-center ms-3 w-30 text-orange-400"><AiFillStar /><AiFillStar /><AiFillStar /><AiFillStar /> <AiOutlineStar /></span></p>
                   </div>
