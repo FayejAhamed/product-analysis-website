@@ -1,10 +1,18 @@
-import React from 'react';
+import { data } from 'autoprefixer';
+import React, { useEffect, useState } from 'react';
+import { Line, LineChart } from 'recharts';
 
 const Dashboard = () => {
+    const [charts, setCharts] = useState([]);
+    useEffect(() =>{
+        fetch('rechart.json')
+        .then(res =>res.json())
+        .then(data => setCharts(data))
+    },[])
     return (
-        <div>
-            <h1>This is dashboard component</h1>
-        </div>
+       <LineChart width={400} hanging={500} data={data}>
+           <Line dataKey={'sell'}></Line>
+       </LineChart>
     );
 };
 
