@@ -6,7 +6,7 @@ This is the dell Next Generation[See your Next Laptop Here](https://stalwart-ecl
 
 
 
-### `ABOUT THIS THIS PROJECTS`
+### `ABOUT THIS  PROJECTS`
 
 * This is a simple dynamic React website.
 
