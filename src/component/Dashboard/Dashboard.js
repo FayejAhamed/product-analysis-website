@@ -58,18 +58,18 @@ const Dashboard = () => {
     const gradientOffset = () => {
         const dataMax = Math.max(...data.map((i) => i.money));
         const dataMin = Math.min(...data.map((i) => i.money));
-      
+
         if (dataMax <= 0) {
-          return 0;
+            return 0;
         }
         if (dataMin >= 0) {
-          return 1;
+            return 1;
         }
-      
+
         return dataMax / (dataMax - dataMin);
-      };
-      
-      const off = gradientOffset();
+    };
+
+    const off = gradientOffset();
 
     return (
         <div className='grid grid-cols-1  lg:grid-cols-2 md:grid-cols-2 gap-4 mt-6'>
@@ -95,77 +95,77 @@ const Dashboard = () => {
                 </BarChart>
             </div>
             <div>
-                        <ResponsiveContainer>
-          <ComposedChart
-            width={500}
-            height={400}
-            data={data}
-            margin={{
-              top: 20,
-              right: 20,
-              bottom: 20,
-              left: 20,
-            }}
-          >
-            <CartesianGrid stroke="#f5f5f5" />
-            <XAxis dataKey="month" scale="band" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Area type="monotone" dataKey="price" fill="#8884d8" stroke="#8884d8" />
-            <Bar dataKey="revenue" barSize={20} fill="#413ea0" />
-            <Line type="monotone" dataKey="revenue" stroke="#ff7300" />
-          </ComposedChart>
-        </ResponsiveContainer>
+                <ResponsiveContainer>
+                    <ComposedChart
+                        width={500}
+                        height={400}
+                        data={data}
+                        margin={{
+                            top: 20,
+                            right: 20,
+                            bottom: 20,
+                            left: 20,
+                        }}
+                    >
+                        <CartesianGrid stroke="#f5f5f5" />
+                        <XAxis dataKey="month" scale="band" />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Area type="monotone" dataKey="price" fill="#8884d8" stroke="#8884d8" />
+                        <Bar dataKey="revenue" barSize={20} fill="#413ea0" />
+                        <Line type="monotone" dataKey="revenue" stroke="#ff7300" />
+                    </ComposedChart>
+                </ResponsiveContainer>
             </div>
             <div>
-            <AreaChart
-          width={500}
-          height={400}
-          data={data}
-          margin={{
-            top: 10,
-            right: 30,
-            left: 0,
-            bottom: 0,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" />
-          <YAxis />
-          <Tooltip />
-          <defs>
-            <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
-              <stop offset={off} stopColor="green" stopOpacity={1} />
-              <stop offset={off} stopColor="red" stopOpacity={1} />
-            </linearGradient>
-          </defs>
-          <Area type="monotone" dataKey="money" stroke="#000" fill="url(#splitColor)" />
-        </AreaChart>
+                <AreaChart
+                    width={500}
+                    height={400}
+                    data={data}
+                    margin={{
+                        top: 10,
+                        right: 30,
+                        left: 0,
+                        bottom: 0,
+                    }}
+                >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="month" />
+                    <YAxis />
+                    <Tooltip />
+                    <defs>
+                        <linearGradient id="splitColor" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset={off} stopColor="green" stopOpacity={1} />
+                            <stop offset={off} stopColor="red" stopOpacity={1} />
+                        </linearGradient>
+                    </defs>
+                    <Area type="monotone" dataKey="money" stroke="#000" fill="url(#splitColor)" />
+                </AreaChart>
             </div>
             <div>
-            <ComposedChart
-          width={500}
-          height={400}
-          data={data}
-          margin={{
-            top: 20,
-            right: 80,
-            bottom: 20,
-            left: 20,
-          }}
-        >
-          <CartesianGrid stroke="#f5f5f5" />
-          <Tooltip />
-          <Legend />
+                <ComposedChart
+                    width={500}
+                    height={400}
+                    data={data}
+                    margin={{
+                        top: 20,
+                        right: 80,
+                        bottom: 20,
+                        left: 20,
+                    }}
+                >
+                    <CartesianGrid stroke="#f5f5f5" />
+                    <Tooltip />
+                    <Legend />
 
-          <XAxis dataKey="revenue" type="number" label={{ value: '', position: 'insideBottomRight', offset: 0 }} />
-          <YAxis unit="ms" type="number" label={{ value: '', angle: -90, position: 'insideLeft' }} />
-          <Scatter name="red" dataKey="red" fill="red" />
-          <Scatter name="blue" dataKey="blue" fill="blue" />
-          <Line dataKey="price" stroke="blue" dot={false} activeDot={false} legendType="none" />
-          <Line dataKey="revenue" stroke="red" dot={false} activeDot={false} legendType="none" />
-        </ComposedChart>
+                    <XAxis dataKey="revenue" type="number" label={{ value: '', position: 'insideBottomRight', offset: 0 }} />
+                    <YAxis unit="ms" type="number" label={{ value: '', angle: -90, position: 'insideLeft' }} />
+                    <Scatter name="red" dataKey="red" fill="red" />
+                    <Scatter name="blue" dataKey="blue" fill="blue" />
+                    <Line dataKey="price" stroke="blue" dot={false} activeDot={false} legendType="none" />
+                    <Line dataKey="revenue" stroke="red" dot={false} activeDot={false} legendType="none" />
+                </ComposedChart>
             </div>
         </div>
     );
