@@ -95,10 +95,10 @@ const Dashboard = () => {
                 </BarChart>
             </div>
             <div>
-                <ResponsiveContainer>
+               
                     <ComposedChart
-                        width={500}
-                        height={400}
+                        width={700}
+                        height={500}
                         data={data}
                         margin={{
                             top: 20,
@@ -116,12 +116,12 @@ const Dashboard = () => {
                         <Bar dataKey="revenue" barSize={20} fill="#413ea0" />
                         <Line type="monotone" dataKey="revenue" stroke="#ff7300" />
                     </ComposedChart>
-                </ResponsiveContainer>
+               
             </div>
             <div>
                 <AreaChart
-                    width={500}
-                    height={400}
+                    width={700}
+                    height={500}
                     data={data}
                     margin={{
                         top: 10,
@@ -145,8 +145,8 @@ const Dashboard = () => {
             </div>
             <div>
                 <ComposedChart
-                    width={500}
-                    height={400}
+                    width={700}
+                    height={500}
                     data={data}
                     margin={{
                         top: 20,
