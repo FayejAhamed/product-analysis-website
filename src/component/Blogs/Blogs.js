@@ -21,7 +21,7 @@ const Blogs = () => {
 
                     Compared to display: inline, the major difference is that inline-block allows to set a width and height on the element. Also, with display: inline, top and bottom margins and paddings are not respected, and with display: inline-block they are.
 
-                    Now, the difference between display: inline-block and display: block is that, with display: block, a line break happens after the element, so a block element doesn't sit next to other elements. Here are some visual examples:</p>
+                    Now, the difference between display: inline-block and display: block is that, with display: block, a line break happens after the element, so a block element doesn't sit next to other elements.</p>
             </div>
 
         </div>
